@@ -29,7 +29,7 @@ app.get('/getUrl', (req,res) => {
 
 
 //Serve ionic static files
-app.use('/', express.static(path.join(process.env.PWD,'www')));
+app.use( express.static(path.join(process.env.PWD,'www')));
 
 server.listen(app.get('port'),()=>{
   console.log('Server is listening at port ' + app.get('port') + ' ...');
