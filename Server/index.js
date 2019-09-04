@@ -7,7 +7,7 @@ const server = require('http').Server(app);
 const io = require('socket.io')(server, {origins:'*:*'});
 
 const urlController = require('./url-controller');
-
+process.env.PWD = process.cwd();
 const cors = require('cors');
 
 app.use(cors());
@@ -29,7 +29,7 @@ app.get('/getUrl', (req,res) => {
 
 
 //Serve ionic static files
-app.use('/', express.static(path.join(__dirname,'www')));
+app.use('/', express.static(path.join(process.env.PWD,'www')));
 
 server.listen(app.get('port'),()=>{
   console.log('Server is listening at port ' + app.get('port') + ' ...');
