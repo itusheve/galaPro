@@ -7,10 +7,11 @@ const server = require('http').Server(app);
 const io = require('socket.io')(server, {origins:'*:*'});
 
 const urlController = require('./url-controller');
-process.env.PWD = process.cwd();
+
 const cors = require('cors');
 
 app.use(cors());
+
 app.set( 'port', ( process.env.PORT || 3000 ));
 
 mongodb.connect(function(error){
@@ -27,9 +28,11 @@ app.get('/getUrl', (req,res) => {
 });
 
 
-
+app.get('*', (req,res) => {
+  res.sendFile(path.join(__dirname,'www','index.html'));
+});
 //Serve ionic static files
-app.use( express.static(path.join(process.env.PWD,'public')));
+app.use(express.static(path.join(__dirname,'www')));
 
 server.listen(app.get('port'),()=>{
   console.log('Server is listening at port ' + app.get('port') + ' ...');
