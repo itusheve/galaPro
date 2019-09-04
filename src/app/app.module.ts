@@ -6,7 +6,10 @@ import { StatusBar } from '@ionic-native/status-bar';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
-
+import {HttpClientModule} from "@angular/common/http";
+import {InAppBrowser} from "@ionic-native/in-app-browser";
+import {SocketIoModule} from "ngx-socket-io";
+const config = {url:'http://localhost:3000',options:{autoConnect:false}};
 @NgModule({
   declarations: [
     MyApp,
@@ -14,7 +17,9 @@ import { HomePage } from '../pages/home/home';
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    HttpClientModule,
+  SocketIoModule.forRoot(config),
+      IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -24,6 +29,7 @@ import { HomePage } from '../pages/home/home';
   providers: [
     StatusBar,
     SplashScreen,
+    InAppBrowser,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

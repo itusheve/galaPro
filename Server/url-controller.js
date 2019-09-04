@@ -7,6 +7,7 @@ const API_PARAMS = {
 }
 
 module.exports = function(req,res){
+
   let queryData = url.parse(req.url, true).query;
 
   if(queryData[API_PARAMS.REDIRECT] == 'true') {
@@ -21,6 +22,6 @@ module.exports = function(req,res){
     }
 
   } else {
-    queryData[API_PARAMS.URL] ? res.status(500).send(({error : 'Please check redirect when sending a URL'})) : res.send();
+    queryData[API_PARAMS.URL] ? res.status(500).send(({error : 'Please check redirect when sending a URL',listeningMode:true})) : res.send();
   }
 }
