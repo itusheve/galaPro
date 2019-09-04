@@ -2,11 +2,9 @@
   "name": "gala-pro",
   "version": "1.0.0",
   "scripts": {
-    "postinstall": "npm install --prefix Server",
-    "start": "node Server/index.js"
+    "postinstall": "npm install --prefix Server"
   },
   "engines": {
-    "node": "10.15.0",
-    "npm": "6.11.2"
+    "node": "10.x"
   }
 }
