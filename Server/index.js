@@ -29,7 +29,7 @@ app.get('/getUrl', (req,res) => {
 
 
 app.get('*', (req,res) => {
-  res.sendFile(path.join(__dirname,'www','index.html'));
+  res.sendFile(path.resolve(__dirname,'www','index.html'));
 });
 //Serve ionic static files
 app.use(express.static(path.join(__dirname,'www')));
