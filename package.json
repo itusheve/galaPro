@@ -2,7 +2,7 @@
   "name": "gala-pro",
   "version": "1.0.0",
   "scripts": {
-    "postinstall": "npm install --prefix Client"
+    "postinstall": "npm install --prefix Server"
   },
   "engines": {
     "node": "10.x"
