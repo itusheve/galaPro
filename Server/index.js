@@ -11,7 +11,7 @@ const urlController = require('./url-controller');
 const cors = require('cors');
 
 app.use(cors());
-app.set( 'port', ( process.env.PORT || 5000 ));
+app.set( 'port', ( process.env.PORT || 3000 ));
 
 mongodb.connect(function(error){
   if(error) throw error;
