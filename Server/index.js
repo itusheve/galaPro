@@ -26,10 +26,6 @@ app.get('/getUrl', (req,res) => {
   urlController(req,res);
 });
 
-app.get('/', (req,res) => {
-  res.redirect('/index.html');
-});
-
 
 
 //Serve ionic static files
