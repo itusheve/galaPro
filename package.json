@@ -6,7 +6,7 @@
     "start": "node Server/index.js"
   },
   "engines": {
-    "node": "10.x",
-    "npm": "7.0.0"
+    "node": "10.15.0",
+    "npm": "6.11.2"
   }
 }
