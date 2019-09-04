@@ -12,7 +12,6 @@ const cors = require('cors');
 
 app.use(cors());
 app.set( 'port', ( process.env.PORT || 5000 ));
-const port = 3000;
 
 mongodb.connect(function(error){
   if(error) throw error;
@@ -36,6 +35,6 @@ app.get('/', (req,res) => {
 //Serve ionic static files
 app.use(express.static('www'));
 
-server.listen(app.get(port),()=>{
-  console.log('Server is listening at port ' + port + ' ...');
+server.listen(app.get('port'),()=>{
+  console.log('Server is listening at port ' + app.get('port') + ' ...');
 });
